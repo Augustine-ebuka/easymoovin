@@ -1,18 +1,13 @@
 const express = require('express')
-const mongoose = require('mongoose')
+const connectDB = require('./db/connect')
 const dotenv = require('dotenv')
 dotenv.config()
-
-mongoose.connect(process.env.MONGO).then(()=>{
-    console.log('conneted to db');
-}).catch((error)=>{
-    console.log("error connecting", error);
-})
 
 
 const app = express()
 
 
 app.listen(3000, ()=>{
+    connectDB(process.env.MONGO)
     console.log('server listening on port ')
 })
