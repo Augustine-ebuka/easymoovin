@@ -24,17 +24,17 @@ const navigate= useNavigate()
               'Content-Type': 'application/json'
             }
           });
-          if(result.status === 201){
+          if(result.status === 200){
             console.log(result);
+            dispatch(signInSuccess(result.data))
+            navigate('/')
           }
           if(result.data.success === false){
             dispatch(signInFailure(result.data.message))
             //   setError(result.data.message)
             //   setLoading(false)
               return
-            } 
-            dispatch(signInSuccess(result.data))
-            navigate('/')
+            }       
     } catch (error) {
         console.log(error.response.data.message)
         dispatch(signInFailure(error.response.data.message))

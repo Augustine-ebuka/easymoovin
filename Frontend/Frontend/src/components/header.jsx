@@ -21,7 +21,7 @@ import {Link} from 'react-router-dom'
                 <li className='hidden sm:inline hover:underline text-slate-500'>About</li>
                 </Link>
                 <Link to='/signin'>
-                <li className='hidden sm:inline hover:underline text-slate-500'>signin</li>
+                <li className='sm:inline hover:underline text-slate-500'>signin</li>
                 </Link>
             </ul>
            </div>
