@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
+import OAuth from "../components/OAuth";
 function Signup() {
   const [formData, setFormData] = useState({});
   const [error, setError] = useState(null)
@@ -52,6 +53,7 @@ const navigate= useNavigate()
         <input className="border p-3 rounded-lg" onChange={handleChange} id="username" type="text" placeholder="username"></input>
         <input className="border p-3 rounded-lg" onChange={handleChange} id="password" type="password" placeholder="password"></input>
         <button disabled={loading} className="bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-80">{loading?"Loading":"Signup"}</button>
+        <OAuth></OAuth>
       </form>
       <div className="flex gap-2 mt-5">
         <p>have an account?</p>
